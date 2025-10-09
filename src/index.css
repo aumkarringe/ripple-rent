@@ -8,26 +8,26 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 240 20% 99%;
-    --foreground: 240 10% 10%;
+    --background: 160 20% 98%;
+    --foreground: 160 15% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 10%;
+    --card-foreground: 160 15% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 10%;
+    --popover-foreground: 160 15% 10%;
 
-    --primary: 262 83% 58%;
-    --primary-glow: 262 83% 68%;
+    --primary: 160 84% 39%;
+    --primary-glow: 160 84% 49%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 240 5% 96%;
-    --secondary-foreground: 240 10% 10%;
+    --secondary: 160 5% 96%;
+    --secondary-foreground: 160 10% 10%;
 
-    --muted: 240 5% 96%;
-    --muted-foreground: 240 4% 46%;
+    --muted: 160 5% 96%;
+    --muted-foreground: 160 4% 46%;
 
-    --accent: 262 83% 58%;
+    --accent: 174 72% 56%;
     --accent-foreground: 0 0% 100%;
 
     --success: 142 76% 36%;
@@ -36,46 +36,50 @@ All colors MUST be HSL.
     --warning: 25 95% 53%;
     --warning-foreground: 0 0% 100%;
 
+    --coral: 11 92% 66%;
+    --coral-foreground: 0 0% 100%;
+
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 240 6% 90%;
-    --input: 240 6% 90%;
-    --ring: 262 83% 58%;
+    --border: 160 6% 90%;
+    --input: 160 6% 90%;
+    --ring: 160 84% 39%;
 
     --radius: 0.75rem;
 
-    --gradient-primary: linear-gradient(135deg, hsl(262 83% 58%), hsl(220 90% 56%));
+    --gradient-primary: linear-gradient(135deg, hsl(160 84% 39%), hsl(174 72% 56%));
+    --gradient-coral: linear-gradient(135deg, hsl(11 92% 66%), hsl(25 95% 63%));
     --gradient-success: linear-gradient(135deg, hsl(142 76% 36%), hsl(158 64% 52%));
     --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
     
-    --shadow-glow: 0 0 40px hsl(262 83% 58% / 0.3);
+    --shadow-glow: 0 0 40px hsl(160 84% 39% / 0.3);
     --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.08);
     
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .dark {
-    --background: 240 10% 8%;
+    --background: 160 15% 7%;
     --foreground: 0 0% 98%;
 
-    --card: 240 10% 12%;
+    --card: 160 12% 10%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 240 10% 12%;
+    --popover: 160 12% 10%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 262 83% 58%;
-    --primary-glow: 262 83% 68%;
+    --primary: 160 84% 39%;
+    --primary-glow: 160 84% 49%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 240 4% 16%;
+    --secondary: 160 8% 15%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 240 4% 16%;
-    --muted-foreground: 240 5% 65%;
+    --muted: 160 8% 15%;
+    --muted-foreground: 160 5% 65%;
 
-    --accent: 262 83% 58%;
+    --accent: 174 72% 56%;
     --accent-foreground: 0 0% 100%;
 
     --success: 142 76% 36%;
@@ -84,18 +88,22 @@ All colors MUST be HSL.
     --warning: 25 95% 53%;
     --warning-foreground: 0 0% 100%;
 
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 0 0% 98%;
+    --coral: 11 92% 66%;
+    --coral-foreground: 0 0% 100%;
 
-    --border: 240 4% 16%;
-    --input: 240 4% 16%;
-    --ring: 262 83% 58%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --gradient-primary: linear-gradient(135deg, hsl(262 83% 58%), hsl(220 90% 56%));
+    --border: 160 8% 20%;
+    --input: 160 8% 20%;
+    --ring: 160 84% 39%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(160 84% 39%), hsl(174 72% 56%));
+    --gradient-coral: linear-gradient(135deg, hsl(11 92% 66%), hsl(25 95% 63%));
     --gradient-success: linear-gradient(135deg, hsl(142 76% 36%), hsl(158 64% 52%));
     --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
     
-    --shadow-glow: 0 0 40px hsl(262 83% 58% / 0.4);
+    --shadow-glow: 0 0 40px hsl(160 84% 39% / 0.4);
     --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.3);
   }
 }
@@ -119,6 +127,10 @@ All colors MUST be HSL.
 
   .gradient-success {
     background: var(--gradient-success);
+  }
+
+  .gradient-coral {
+    background: var(--gradient-coral);
   }
 
   .text-gradient {
