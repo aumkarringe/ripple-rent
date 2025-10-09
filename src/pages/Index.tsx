@@ -1,13 +1,50 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import { Hero } from "@/components/Hero";
+import { Dashboard } from "@/components/Dashboard";
+import { AddExpenseModal } from "@/components/AddExpenseModal";
+import { AddParticipantModal } from "@/components/AddParticipantModal";
+import { ThemeToggle } from "@/components/ThemeToggle";
+import { ExpenseProvider } from "@/contexts/ExpenseContext";
 
 const Index = () => {
+  const [showDashboard, setShowDashboard] = useState(false);
+  const [showAddExpense, setShowAddExpense] = useState(false);
+  const [showAddParticipant, setShowAddParticipant] = useState(false);
+
+  const handleGetStarted = () => {
+    setShowDashboard(true);
+    setTimeout(() => {
+      document.querySelector("#dashboard")?.scrollIntoView({ behavior: "smooth" });
+    }, 100);
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <ExpenseProvider>
+      <div className="relative">
+        <ThemeToggle />
+        
+        <Hero onGetStarted={handleGetStarted} />
+        
+        {showDashboard && (
+          <div id="dashboard">
+            <Dashboard
+              onAddExpense={() => setShowAddExpense(true)}
+              onAddParticipant={() => setShowAddParticipant(true)}
+            />
+          </div>
+        )}
+
+        <AddExpenseModal
+          open={showAddExpense}
+          onClose={() => setShowAddExpense(false)}
+        />
+
+        <AddParticipantModal
+          open={showAddParticipant}
+          onClose={() => setShowAddParticipant(false)}
+        />
       </div>
-    </div>
+    </ExpenseProvider>
   );
 };
 
